@@ -1,3 +1,3 @@
 # Installation
 
-- run with ```javascript npm run start```
+- run with ```npm run start```
