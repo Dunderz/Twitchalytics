@@ -1,3 +1,119 @@
-.welcome {
-    font-size: 30px;
+body {
+    background-color: black;
+    margin: 0;
+}
+
+// WELCOME //
+
+.welcome-container {
+    height: 100vh;
+    width: 100%;
+    display: black;
+    position: relative;
+}
+
+.welcome-container::after {
+    content: "";
+    background-image: url(../images/leagueWorlds.jpeg);
+    background-size: cover;                      /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.welcome-text {
+    margin: 0;
+    font-size: 5rem;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+}
+
+
+// ABOUT // 
+
+.twitchalytics-info-container {
+    width: 100vw;
+    height: 900px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.twitchalytics-logo-desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.twitchalytics-about {
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.twitch-logo-container {
+    height: 200px;
+    width: 200px;
+}
+
+.twitch-logo {
+    max-width: 100%;
+}
+
+.twitch-description {
+    font-family: 'Roboto', sans-serif;
+    width: 50%;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 20px;
+    min-width: 630px;
+    max-width: 630px;
+}
+
+.alytics {
+    margin-top: 60px;
+}
+
+.data-image-container {
+    margin-top: 40px;
+    height: 150px;
+    width: 300px;
+}
+
+.data-image {
+    width: 100%;
+}
+
+
+// VIEWERS // 
+
+.twitch-viewers-container {
+    width: 100vw;
+    height: 800px;
+    background-color: #9147ff;
+}
+
+.twitch-growth-container {
+    width: 100vw;
+    height: 800px;
+    background-color: #5d349b;
+}
+
+.twitch-games-container {
+    width: 100vw;
+    height: 800px;
+    background-color: #33195a;
 }
