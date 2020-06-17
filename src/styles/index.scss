@@ -1,6 +1,7 @@
 body {
     background-color: black;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 // WELCOME //
@@ -24,20 +25,31 @@ body {
     right: 0;
     position: fixed;
     z-index: -1;
-    opacity: 0.2;
+    opacity: 0.15;
 }
 
 .welcome-text {
     margin: 0;
-    font-size: 5rem;
-    font-family: 'Roboto', sans-serif;
-    color: white;
     position: absolute;
     text-align: center;
     width: 100%;
     top: 40%;
+    display: flex;
+    flex-direction: column;
 }
 
+.welcome-header {
+    font-size: 5rem;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.welcome-sub-header {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
 
 // ABOUT // 
 
@@ -97,6 +109,17 @@ body {
     width: 100%;
 }
 
+// INFO HEADER //
+
+.twitch-stat-header {
+    color: white;
+    font-size: 3rem;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+
+
 
 // VIEWERS // 
 
@@ -106,14 +129,32 @@ body {
     background-color: #9147ff;
 }
 
+
+
+// GROWTH //
+
 .twitch-growth-container {
     width: 100vw;
     height: 800px;
     background-color: #5d349b;
 }
 
+
+
+// GAMES // 
+
 .twitch-games-container {
     width: 100vw;
     height: 800px;
     background-color: #33195a;
+}
+
+
+
+// ACHIEVEMENTS //
+
+.twitch-achievements-container {
+    width: 100vw;
+    height: 800px;
+    background-color: #1f1036;
 }
