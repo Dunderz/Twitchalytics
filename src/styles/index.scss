@@ -2,7 +2,31 @@ body {
     background-color: black;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
+
+// SCROLLBAR //
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: rgba(255, 255, 255, 1); 
+overflow-x: hidden;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: rgb(199, 199, 199); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: rgb(153, 153, 153); 
+}
+
 
 // WELCOME //
 
@@ -129,7 +153,16 @@ body {
     background-color: #9147ff;
 }
 
+#viewers-svg > svg {
+    display: block;
+    margin: 0 auto;
+    width: 940px;
+    height: 500px;
+}
 
+.bars {
+    width: 5px;
+}
 
 // GROWTH //
 
