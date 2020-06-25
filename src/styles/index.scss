@@ -156,13 +156,35 @@ background: rgb(153, 153, 153);
 #viewers-svg > svg {
     display: block;
     margin: 0 auto;
-    width: 940px;
+    width: 797px;
 }
 
-.bars {
-    width: 30px;
-    background-color: green;
+g text {
+    color: white;
+    font-size: 12px;
 }
+
+g line {
+    stroke: #9147ff;
+}
+
+.viewers-x path {
+    stroke: #9147ff;
+}
+
+.viewers-y path {
+    stroke: #949494;
+}
+
+.bar {
+    fill: #58ffe6;
+}
+
+.bar:hover {
+    cursor: pointer;
+    fill: #188676;
+}
+
 
 // GROWTH //
 
