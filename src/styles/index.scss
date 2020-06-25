@@ -79,10 +79,11 @@ background: rgb(153, 153, 153);
 
 .twitchalytics-info-container {
     width: 100vw;
-    height: 900px;
+    height: 1000px;
     background-color: white;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .twitchalytics-logo-desc {
@@ -149,14 +150,27 @@ background: rgb(153, 153, 153);
 
 .twitch-viewers-container {
     width: 100vw;
-    height: 800px;
+    height: 850px;
     background-color: #9147ff;
 }
 
+#viewers-svg {
+    
+}
+
 #viewers-svg > svg {
+    position: relative;
     display: block;
     margin: 0 auto;
     width: 797px;
+}
+
+.viewers-y-label {
+    position: absolute;
+    color: white;
+    bottom: 200px;
+    left: 100px;
+    transform: rotate(-90deg);
 }
 
 g text {
@@ -177,14 +191,45 @@ g line {
 }
 
 .bar {
-    fill: #58ffe6;
+    fill: #b5ff47;
 }
 
 .bar:hover {
     cursor: pointer;
-    fill: #188676;
+    fill: #ff6c47;
 }
 
+.viewer-tooltip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 170px;
+    color: white;
+    font-weight: 500;
+    background-color: #ff6c47;
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+
+.twitch-viewers-description {
+    width: 50%;
+    min-width: 630px;
+    max-width: 630px;
+    margin: 0 auto;
+    color: white;
+}
+
+.twitch-stat-source {
+    width: 50%;
+    min-width: 630px;
+    max-width: 630px;
+    margin: 30px auto 0;
+    color: white;
+    font-size: 14px;
+    font-style: italic;
+}
 
 // GROWTH //
 
@@ -201,7 +246,7 @@ g line {
 .twitch-games-container {
     width: 100vw;
     height: 800px;
-    background-color: #33195a;
+    background-color: #5d349b;
 }
 
 
@@ -211,5 +256,5 @@ g line {
 .twitch-achievements-container {
     width: 100vw;
     height: 800px;
-    background-color: #1f1036;
+    background-color: #33195a;
 }

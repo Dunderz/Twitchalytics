@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         .attr('transform', 'translate(' +
         spacing/2 + ',' + spacing/2 + ')');
 
+    d3.select('#viewers-svg')
+        .append('div')
+        .attr('class', 'viewer-tooltip')
+        .attr('style', 'position: fixed; opacity: 0;');
+
 
     d3.csv('http://localhost:8080/src/data/average-viewership.csv').then(function(data) {
         const xScale = d3.scaleLinear()
@@ -46,17 +51,40 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const bars = svg.selectAll('rect').data(data);
 
+        const barToolTip = (d) => {
+            return (`
+                    <div>
+                        <div>Date: ${d.Month} ${d.Year}</div>
+                    </div>
+                    <div>
+                        <div>Viewers: ${d.Viewers}</div>
+                    </div>
+            `)
+        }
+
         const loadBars = (sections) => {
             sections.enter().append('rect')
                 .classed('bar', true)
                 .attr('width', 28)
                 .attr('x', function(d, i) {return ((i+0.45) * 34);})
                 .attr('y', function(d) {return height - 100;})
+                .on('mouseenter', function(d) {
+                    d3.select('.viewer-tooltip')
+                        .style('opacity', 1)
+                        .style("top",  event.target.getBoundingClientRect().y - 95 + "px")
+                        .style('left', event.target.getBoundingClientRect().x - 70 + 'px')
+                        .html(barToolTip(d))
+                })
+                .on('mouseleave', function() {
+                    d3.select('.viewer-tooltip')
+                        .style('opacity', 0)
+                })
                 .transition().delay(function(d, i) {return i*65})
                 .duration(500)
                 .attr('height', function(d) {return height - 60 - yScale(+d.Viewers)})
                 .attr('x', function(d, i) {return ((i+0.45) * 34);})
                 .attr('y', function(d) {return yScale(+d.Viewers) - 40;})
+                
         }
 
         // refactor
