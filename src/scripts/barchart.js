@@ -66,15 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
             loadBars(bars);
         }
 
-        if (loaded == false) {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY >= 1400) {
-                    loadBars(bars);
-                }
-            })
-        }
+        window.addEventListener('scroll', function() {
+            if (window.scrollY >= 1400 && loaded == false) {
+                loaded = true;
+                loadBars(bars);
+            }
+        })
 
-        
     });
 
 })
