@@ -154,10 +154,6 @@ background: rgb(153, 153, 153);
     background-color: #9147ff;
 }
 
-#viewers-svg {
-    
-}
-
 #viewers-svg > svg {
     position: relative;
     display: block;
@@ -247,6 +243,16 @@ g line {
     width: 100vw;
     height: 800px;
     background-color: #5d349b;
+}
+
+#games-svg > svg {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+#games-svg {
+    pointer-events: none;
 }
 
 
