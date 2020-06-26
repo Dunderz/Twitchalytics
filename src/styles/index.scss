@@ -37,6 +37,14 @@ background: rgb(153, 153, 153);
     position: relative;
 }
 
+.welcome-nav {
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    top: 0;
+}
+
 .welcome-container::after {
     content: "";
     background-image: url(../images/leagueWorlds.jpeg);
