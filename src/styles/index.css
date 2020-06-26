@@ -5,7 +5,7 @@ body {
     overflow-x: hidden;
 }
 
-// SCROLLBAR //
+/* SCROLLBAR */
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -28,7 +28,7 @@ background: rgb(153, 153, 153);
 }
 
 
-// WELCOME //
+/* WELCOME */
 
 .welcome-container {
     height: 100vh;
@@ -103,7 +103,7 @@ background: rgb(153, 153, 153);
     color: white;
 }
 
-// ABOUT // 
+/* ABOUT */
 
 .twitchalytics-info-container {
     width: 100vw;
@@ -162,7 +162,7 @@ background: rgb(153, 153, 153);
     width: 100%;
 }
 
-// INFO HEADER //
+/* INFO HEADER */
 
 .twitch-stat-header {
     color: white;
@@ -174,7 +174,7 @@ background: rgb(153, 153, 153);
 
 
 
-// VIEWERS // 
+/* VIEWERS */
 
 .twitch-viewers-container {
     width: 100vw;
@@ -255,7 +255,7 @@ g line {
     font-style: italic;
 }
 
-// GROWTH //
+/* GROWTH */
 
 .twitch-growth-container {
     width: 100vw;
@@ -265,7 +265,7 @@ g line {
 
 
 
-// GAMES // 
+/* GAMES */
 
 .twitch-games-container {
     width: 100vw;
@@ -317,7 +317,7 @@ g line {
 }
 
 
-// ACHIEVEMENTS //
+/* ACHIEVEMENTS */
 
 .twitch-achievements-container {
     width: 100vw;
@@ -365,7 +365,7 @@ g line {
     
 }
 
-// FOOTER //
+/* FOOTER */
 
 .twitch-footer-container {
     width: 100%;
