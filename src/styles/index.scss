@@ -213,7 +213,7 @@ g line {
     width: 50%;
     min-width: 630px;
     max-width: 630px;
-    margin: 0 auto;
+    margin: 50px auto 0;
     color: white;
 }
 
@@ -241,7 +241,7 @@ g line {
 
 .twitch-games-container {
     width: 100vw;
-    height: 800px;
+    height: 900px;
     background-color: #5d349b;
 }
 
@@ -253,8 +253,40 @@ g line {
 
 #games-svg {
     pointer-events: none;
+    width: 100vw;
+    height: 500px;
 }
 
+.game-name {
+    fill: white;
+}
+
+.game-tooltip {
+    height: 70px;
+    width: 200px;
+    margin: 0 auto;
+    color: white;
+    position: relative;
+    font-size: 13px;
+    top: 150px;
+}
+
+.game-tooltip-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-tooltip-game {
+    font-size: 20px;
+}
+
+.twitch-games-description {
+    width: 50%;
+    min-width: 630px;
+    max-width: 630px;
+    margin: 0px auto 0;
+    color: white;
+}
 
 
 // ACHIEVEMENTS //

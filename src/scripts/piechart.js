@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const width = 460;
+    const width = 900;
     const height = 560;
-    const radius = Math.min(width-50, height-50) / 2;
-    const donutWidth = 180;
+    const radius = Math.min(width-150, height-150) / 2;
+    const donutWidth = 120;
 
     let loaded = false;
 
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .attr('width', width)
         .attr('height', height)
         .append('g')
-        .attr('transform', 'translate(' + (width/2) + ',' + (height / 2) + ')');
+        .attr('transform', 'translate(' + (width/2) + ',' + (height / 2 - 50) + ')');
 
     const arc = d3.arc()
         .innerRadius(radius - donutWidth)
@@ -36,9 +36,42 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .sort(null);
     
-    const arcOver = d3.arc().outerRadius(radius + 20).innerRadius(radius - 170);
+    const arcOver = d3.arc().outerRadius(radius + 20).innerRadius(radius - 150);
+
+    d3.select('.game-tooltip')
+        .attr('style', 'opacity: 0;')
+        
 
     d3.csv('http://localhost:8080/src/data/top-games.csv').then(function(data) {
+        const legends = svg.append('g').attr('transform', 'translate(200, -100)')
+                .selectAll('.legends').data(data);
+            
+        const legend = legends.enter().append('g').classed('legends', true)
+                .attr('transform', function(d, i){return "translate(60," + (i+1)*30 + ")";});
+
+        legend.append('rect').attr('width', 20).attr('height', 20)
+                .attr('fill', function(d, i){
+                    return color(d.Game);
+                });
+
+        legend.append('text').classed('game-name', true).text(function(d){return d.Game;})
+                .attr('x', 30)
+                .attr('y', 14);
+
+        const gameToolTip = (d) => {
+            return (`
+                    <div class="game-tooltip-section">
+                        <span>Game:</span> <span>${d.data.Game}</span>
+                    </div>
+                    <div class="game-tooltip-section">
+                        <span>Percentage:</span> <span>${d.data.Percentage}</span>
+                    </div>
+                    <div class="game-tooltip-section">
+                        <span>Viewers:</span> <span>${d.data.Viewers}</span>
+                    </div>
+            `)
+        }
+
         const loadDonut = () => {
             svg.selectAll('path')
                 .data(pie(data))
@@ -49,17 +82,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .on("mouseenter", function (d) {
                     d3.select(this)
+                        .style('cursor', 'pointer')
                         .attr("stroke", "white")
                         .transition()
-                        .duration(200)
+                        .duration(100)
                         .attr("d", arcOver)
                         .attr("stroke-width", 1);
+                    
+                    d3.select('.game-tooltip')
+                        .style('opacity', 1)
+                        .style("top",  '10px')
+                        .style('left', '0px')
+                        .html(gameToolTip(d))
                 })
                 .on("mouseleave", function (d) {
                     d3.select(this).transition()
                         .duration(200)
                         .attr("d", arc)
                         .attr("stroke", "none");
+
+                    d3.select('.game-tooltip')
+                        .style('opacity', 0)
                 })
                 .attr('transform', 'translate(0, 50)')
                 .transition().delay(function(d,i) {
