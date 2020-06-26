@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .attr('style', 'position: fixed; opacity: 0;');
 
 
-    d3.csv('http://localhost:8080/src/data/average-viewership.csv').then(function(data) {
+    d3.csv('https://dunderproto.github.io/Twitchalytics/src/data/average-viewership.csv').then(function(data) {
         const xScale = d3.scaleLinear()
                     .domain([
                         d3.min(data, function(d){return +d.Year;}), 

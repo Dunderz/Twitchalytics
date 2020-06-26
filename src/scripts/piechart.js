@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .attr('style', 'opacity: 0;')
         
 
-    d3.csv('http://localhost:8080/src/data/top-games.csv').then(function(data) {
+    d3.csv('https://dunderproto.github.io/Twitchalytics/src/data/top-games.csv').then(function(data) {
         const legends = svg.append('g').attr('transform', 'translate(200, -100)')
                 .selectAll('.legends').data(data);
             
