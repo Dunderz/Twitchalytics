@@ -293,6 +293,46 @@ g line {
 
 .twitch-achievements-container {
     width: 100vw;
-    height: 800px;
+    height: 1000px;
     background-color: #33195a;
+}
+
+.achievements-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin: 100px auto 0;
+}
+
+.twitch-achievement {
+    width: 330px;
+    margin: 20px;
+    height: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.4);
+}
+
+.twitch-achievement:hover {
+    background-color: rgb(207, 207, 207); 
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.twitch-achievement:not( :hover ) {
+    transition: 0.25s;
+}
+
+.twitch-achievement-year {
+    font-size: 24px;
+    padding: 10px;
+}
+
+.twitch-achievement-detail {
+    align-items: center;
+    margin: 20px auto 10px;
+    padding: 10px 30px 0;
+    font-size: 14px;
+    border-top: 1px solid #e0e0e0;
+    
 }
