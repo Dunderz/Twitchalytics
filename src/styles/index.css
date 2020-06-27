@@ -5,6 +5,10 @@ body {
     overflow-x: hidden;
 }
 
+svg {
+    
+}
+
 /* SCROLLBAR */
 
 ::-webkit-scrollbar {
