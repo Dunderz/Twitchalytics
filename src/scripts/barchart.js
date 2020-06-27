@@ -71,20 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 .on('mouseenter', function(d) {
                     d3.select('.viewer-tooltip')
                         .style('opacity', 1)
-                        .style("top",  event.target.getBoundingClientRect().y - 95 + "px")
                         .style('left', event.target.getBoundingClientRect().x - 70 + 'px')
+                        .style("top",  event.target.getBoundingClientRect().y - 95 + "px")
                         .html(barToolTip(d))
                 })
-                .on('mouseleave', function() {
+                .on('mouseleave', function(d) {
                     d3.select('.viewer-tooltip')
                         .style('opacity', 0)
                 })
                 .transition().delay(function(d, i) {return i*65})
                 .duration(500)
                 .attr('height', function(d) {return height - 60 - yScale(+d.Viewers)})
-                .attr('x', function(d, i) {return ((i+0.45) * 34);})
                 .attr('y', function(d) {return yScale(+d.Viewers) - 40;})
-                
         }
 
         // refactor
