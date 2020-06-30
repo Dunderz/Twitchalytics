@@ -171,9 +171,9 @@ background: rgb(153, 153, 153);
 .twitch-stat-header {
     color: white;
     font-size: 3rem;
-    position: relative;
-    top: 40px;
-    left: 40px;
+    text-align: center;
+    padding-top: 40px;
+
 }
 
 
@@ -337,7 +337,7 @@ g line {
 }
 
 .twitch-achievement {
-    width: 330px;
+    width: 360px;
     margin: 20px;
     height: 350px;
     background-color: white;

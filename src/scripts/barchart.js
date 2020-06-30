@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const xScale = d3.scaleLinear()
                     .domain([
                         d3.min(data, function(d){return +d.Year;}), 
-                        2021
+                        2020
                     ])
-                    .range([0, width-spacing]);
+                    .range([-2, width-spacing-135]);
         
         const xAxis = d3.axisBottom(xScale)
                     .ticks(5).tickFormat(function(d){return d;});
